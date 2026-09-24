@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borang Semakan Buku Latihan Pelajar - Maahad Al Mashoor Al Islami</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans min-h-screen pb-12">
+
+    <div class="max-w-4xl mx-auto px-4 pt-8">
+        <!-- Header -->
+        <div class="bg-emerald-700 text-white p-6 rounded-t-xl shadow-md text-center">
+            <h1 class="text-xl font-bold tracking-wide uppercase">Maahad Al Mashoor Al Islami</h1>
+            <p class="text-emerald-100 text-sm mt-1 uppercase font-semibold">Borang Semakan Buku Latihan Pelajar</p>
+        </div>
+
+        <!-- Form Container -->
+        <form id="semakanForm" class="bg-white p-6 rounded-b-xl shadow-md space-y-6">
+            
+            <!-- Bahagian Maklumat Umum -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Nama Guru -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Nama Guru</label>
+                    <select id="namaGuru" class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                        <option value="">-- Pilih Nama Guru --</option>
+                    </select>
+                </div>
+
+                <!-- Mata Pelajaran -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Mata Pelajaran</label>
+                    <select id="mataPelajaran" class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                        <option value="">-- Pilih Mata Pelajaran --</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Pencerapan -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Pencerapan Ke-</label>
+                    <select id="pencerapan" class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                        <option value="">-- Pencerapan --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+
+                <!-- Kelas -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Kelas Pelajar</label>
+                    <select id="kelas" class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                        <option value="">-- Pilih Kelas --</option>
+                    </select>
+                </div>
+
+                <!-- Tarikh -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Tarikh Semakan</label>
+                    <input type="date" id="tarikh" class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                </div>
+            </div>
+
+            <hr class="border-gray-200">
+
+            <!-- Bahagian Tajuk & Pelajar -->
+            <div class="space-y-6">
+                <!-- Tajuk / Latihan -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Tajuk / Jenis Latihan</label>
+                    <input type="text" id="tajukLatihan" placeholder="Contoh: Bab 1 - Pengenalan / Latihan Buku Kerja m/s 12" class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Nama Murid -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Nama Murid</label>
+                        <select id="namaMurid" class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required disabled>
+                            <option value="">-- Sila pilih Kelas dahulu --</option>
+                        </select>
+                    </div>
+
+                    <!-- Jumlah Murid dalam Kelas (Info sahaja) -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-400 mb-1">Jumlah Murid Dipilih</label>
+                        <input type="text" id="jumlahMurid" value="1 / --" class="w-full border border-gray-200 rounded-lg p-2.5 bg-gray-100 text-gray-500 cursor-not-allowed" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-200">
+
+            <!-- Bahagian Penilaian & Ulasan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Skor Semakan -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Skor Penilaian</label>
+                    <select id="skor" class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                        <option value="">-- Pilih Skor --</option>
+                        <option value="Perlu Diperbaiki">Perlu Diperbaiki</option>
+                        <option value="Memuaskan">Memuaskan</option>
+                        <option value="Baik">Baik</option>
+                        <option value="Cemerlang">Cemerlang</option>
+                    </select>
+                </div>
+
+                <!-- Nama Penyemak -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Nama Penyemak</label>
+                    <input type="text" id="namaPenyemak" placeholder="Nama Guru Kanan / Pentadbir" class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" required>
+                </div>
+            </div>
+
+            <div>
+                <!-- Ulasan Penyemak -->
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Ulasan Penyemak</label>
+                <textarea id="ulasanPenyemak" rows="3" placeholder="Sila berikan maklum balas atau cadangan penambahbaikan..." class="w-full border border-gray-300 rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"></textarea>
+            </div>
+
+            <!-- Butang Hantar -->
+            <div class="pt-4">
+                <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                    Simpan / Hantar Semakan
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript Data & Logik Dinamik -->
+    <script>
+        // --- 1. DATA GURU ---
+        const senaraiGuru = [
+            "SITI ALHA BINTI HJ RAMLI", "SOBRI BIN MD NOR", "ABDUL RASHEED BIN NAGOORGANY", "MOHD ZAMRI BIN NOH@MOHD NOH",
+            "MOHD SHUKRI BIN ABDUL RAZAK", "IBNI HAJAR BIN ABDUL WAHAB", "ZALINA BINTI MD ZAIN", "AZRIN BINTI SAIDIN",
+            "SUHAIDA BINTI ABDULLAH", "NORMAH BINTI MOHD AFFINDI", "NAZRINAH BINTI NAHOOR MEERA", "ZARINA BINTI YUNUS",
+            "ABDUL AZIM BIN ABD KADIR", "ABDUL HAFIZ BIN ISMAIL", "AZHARI BIN AHMAD", "AZLIANA BINTI MD ZAID",
+            "CHE MOHD FAKHRUL RAHIMI BIN RASIT", "NOR FARIZAH HANIM BINTI OMAR", "ILI SUHAILI BINTI ISHAK", "IZZATY BINTI ISHAK",
+            "JUSMIRA AIDA BINTI JOHARI", "KHAIRUL AZHA BIN HALIM", "FARAH AUNI BINTI MOHD KHOIRI", "MARDIANA BINTI SHAHRIL",
+            "MOHD HIJAZI BIN ABU HASSAN", "MUHAMMAD AMIRUL BIN ABDUL RAHMAN", "MUHAMMAD FAISAL BIN ABD RAMLAN", "MUHAMMAD FAIZ BIN RAMLI",
+            "MUHAMMAD HAMZI BIN JAMALUDIN", "MUHAMMAD NASARUDDIN BIN AZMI", "NADIA HANIM BINTI JAAFAR", "NOOR ASLIDA BINTI RAMLI",
+            "NOOR HIDAYAH BINTI MOHAMED NOR", "NOORUL SYUHADA BINTI NOORDIN", "NORAZILA BINTI RAMLI", "FATIMAH AZ-ZAHRA BINTI HASSAN",
+            "NUR AIN SHUHADA BINTI MOHD ZAMRI", "NUR IZZAH BINTI AWANG", "NUR WARDAH BINTI HAMZAH", "NURUL FARHANA BINTI YAHAYA",
+            "NURULIMAN BINTI ZULHISHAM", "ROHIZA BINTI MAT RASHID", "ROSNIZA BINTI AB RAZAK", "FATIN NABILAH BINTI ZAINUDDIN",
+            "SITI ESHAH BINTI HUSSAIN", "SITI NABILAH BINTI HASSAN", "SITI NOR ADILA BINTI DAUD", "SITI NORAINI BINTI MOHD NOR",
+            "SYAZWANI BINTI ZAKARIYA", "NUR'AIN SYAFIQAH BINTI AZIZI", "NUR AFIQAH BINTI HISHAMUDIN", "NOORFARHANA BINTI ABDULLAH",
+            "MOHAMAD AMIN BIN MOHD SHOKRI"
+        ];
+
+        // --- 2. DATA MATA PELAJARAN ---
+        const senaraiSubjek = [
+            "BM", "BI", "SEJ", "SN", "MM", "MT", "GEO", "PA", "PERNIAGAAN", "FZK", "KIMIA", "BIO",
+            "UAD", "ASY", "LAM", "MUI", "AWB", "QT", "PSV", "FEQAH FARAID", "TAUHID MANTIK",
+            "TAFSIR ULUMUHU", "HADIS MUSTOLAH", "NAHU SOROF", "INSYAK MUTOLAAH", "ADAB NUSUS",
+            "ARUDH QAFIAH", "BALAGHAH", "PJPK", "ASK", "RBT", "KKQ"
+        ];
+
+        // --- 3. DATA KELAS ---
+        const senaraiKelas = [
+            "1 IN", "1 IS", "1K", "1S", "2 IN", "2 IS", "2K", "2S", "3 IN", "3 IS", "3K", "3S",
+            "4 AB", "4 AK", "4 AF", "4 AJ", "5 AB", "5 AK", "5 AF", "5 AJ"
+        ];
+
+        // --- 4. DATA DINAMIK MURID MENGIKUT TINGKATAN/KELAS ---
+        // (Dipetakan dan diringkaskan mengikut data murid yang dibekalkan dalam lampiran dokumen)
+        const databaseMurid = {
+            "1 IN": [
